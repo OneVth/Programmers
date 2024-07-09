@@ -6,7 +6,12 @@ namespace Solution
     {
         static void Main(string[] args)
         {
-            Console.WriteLine("Hello World!");
+            String s;
+
+            Console.Clear();
+            s = Console.ReadLine();
+
+            Console.Write(s);
         }
     }
 }
