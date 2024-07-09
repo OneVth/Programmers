@@ -11,7 +11,7 @@ namespace Solution
             Console.Clear();
             s = Console.ReadLine();
             char[] chars = s.ToCharArray();
-            string changedString = "";
+            /*string changedString = "";
 
             foreach (char c in chars)
             {
@@ -26,7 +26,10 @@ namespace Solution
                     changedString += changedChar.ToString();
                 }
             }
-            Console.WriteLine(changedString);
+            Console.WriteLine(changedString);*/
+
+            foreach (char c in chars)
+                Console.Write(Char.IsUpper(c) ? Char.ToLower(c) : Char.ToUpper(c));
         }
     }
 }
