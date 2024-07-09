@@ -14,5 +14,10 @@
 ##### 입출력 예
 
 입력 #1
-```HelloWorld!```
-```HelloWorld!```
+```
+HelloWorld!
+```
+출력 #1
+```
+HelloWorld!
+```
