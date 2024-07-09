@@ -6,7 +6,27 @@ namespace Solution
     {
         static void Main(string[] args)
         {
-            Console.WriteLine("Hello World!");
+            String s;
+
+            Console.Clear();
+            s = Console.ReadLine();
+            char[] chars = s.ToCharArray();
+            string changedString = "";
+
+            foreach (char c in chars)
+            {
+                if (Char.IsUpper(c))
+                {
+                    char changedChar = Char.ToLower(c);
+                    changedString += changedChar.ToString();
+                }
+                else
+                {
+                    char changedChar = Char.ToUpper(c);
+                    changedString += changedChar.ToString();
+                }
+            }
+            Console.WriteLine(changedString);
         }
     }
 }
