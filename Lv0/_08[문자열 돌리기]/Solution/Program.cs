@@ -6,7 +6,17 @@ namespace Solution
     {
         static void Main(string[] args)
         {
-            Console.WriteLine("Hello World!");
+            String s;
+
+            Console.Clear();
+            s = Console.ReadLine();
+
+            char[] chars = s.ToCharArray();
+
+            foreach (char c in chars)
+            {
+                Console.WriteLine(c);
+            }
         }
     }
 }
