@@ -18,11 +18,12 @@
 
 ##### 입출력 예
 
-
+```
 |my_string|overwrite_string|s|result|
 |:-----|:----|:--|:------|
 |"He11oWor1d"|"lloWorl"|2|"HelloWorld"|
 |"Program29b8UYP"|"merS123"|7|"ProgrammerS123"|
+```
 
 ---
 
