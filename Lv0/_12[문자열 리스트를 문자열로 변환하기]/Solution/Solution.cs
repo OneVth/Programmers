@@ -6,7 +6,7 @@ namespace Solution
 {
     internal class Solution
     {
-        public string solution(string[] arr)
+        public string solution1(string[] arr)
         {
             string answer = "";
 
@@ -14,6 +14,19 @@ namespace Solution
             {
                 answer += str;
             }
+            return answer;
+        }
+
+        public string solution2(string[] arr)
+        {
+            string answer = "";
+            answer = String.Join("", arr);
+            return answer;
+        }
+
+        public string solution3(string[] arr)
+        {
+            string answer = String.Concat(arr);
             return answer;
         }
     }
