@@ -6,7 +6,7 @@ namespace Solution
 {
     internal class Solution
     {
-        public int solution(int a, int b)
+        public int solution1(int a, int b)
         {
             int answer = 0;
 
@@ -18,6 +18,14 @@ namespace Solution
 
             answer = (ab >= ba) ? ab : ba;
             return answer;
+        }
+
+        public int solution2(int a, int b)
+        {
+            int aNum = int.Parse($"{a}{b}");
+            int bNum = int.Parse($"{b}{a}");
+
+            return Math.Max(aNum, bNum);
         }
     }
 }
