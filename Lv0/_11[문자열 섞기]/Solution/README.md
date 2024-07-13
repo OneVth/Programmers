@@ -1,5 +1,7 @@
 # [Level 0] 문자열 섞기
 
+[문제 링크](https://school.programmers.co.kr/learn/courses/30/lessons/181942)
+
 ##### 문제 설명
 
 길이가 같은 두 문자열 ```str1```과 ```str2```가 주어집니다.
