@@ -10,7 +10,6 @@ namespace Solution
     {
         public int solution(int[] num_list)
         {
-            int answer = 0;
             StringBuilder sbEven = new StringBuilder();
             StringBuilder sbOdd = new StringBuilder();
 
