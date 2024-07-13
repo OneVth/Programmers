@@ -8,7 +8,7 @@ namespace Solution
 {
     internal class Solution
     {
-        public int solution(int a, int d, bool[] included)
+        public int solution1(int a, int d, bool[] included)
         {
             int answer = 0;
 
@@ -17,6 +17,19 @@ namespace Solution
                 answer += included[i] ? a + i * d : 0;
             }
             return answer;
+        }
+
+        public int solution2(int a, int d, bool[] included)
+        {
+            return Enumerable.Range(0, included.Length).Sum(s => included[s] ? a + s * d : 0);
+        }
+
+        public int solution3(int a, int d, bool[] included)
+        {
+            return Enumerable.Range(0, included.Length)
+                .Select(s => a + s * d)
+                .Where((w, index) => included[index])
+                .Sum();
         }
     }
 }
