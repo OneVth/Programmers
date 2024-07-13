@@ -1,5 +1,7 @@
 # [Level 0] 조건 문자열
 
+[문제 링크](https://school.programmers.co.kr/learn/courses/30/lessons/181934)
+
 #### 문제 설명
 
 문자열에 따라 다음과 같이 두 수의 크기를 비교하려고 합니다.
