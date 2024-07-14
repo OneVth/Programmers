@@ -8,7 +8,7 @@ namespace Solution
 {
     internal class Solution
     {
-        public int solution(int n, string control)
+        public int solution1(int n, string control)
         {
 
             foreach (char c in control)
@@ -33,6 +33,15 @@ namespace Solution
             }
 
             return n;
+        }
+
+        public int solution2(int n, string control)
+        {
+            return control.Sum(c =>
+            'w' == c ? 1 :
+            's' == c ? -1 :
+            'd' == c ? 10 :
+            'a' == c ? -10 : 0) + n;
         }
     }
 }
