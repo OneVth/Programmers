@@ -8,7 +8,7 @@ namespace Solution
 {
     internal class Solution
     {
-        public string solution(int[] numLog)
+        public string solution1(int[] numLog)
         {
             string answer = "";
             for (int i = 1; i < numLog.Length; i++)
@@ -32,6 +32,25 @@ namespace Solution
                 }
             }
             return answer;
+        }
+
+        public string solution2(int[] numLog)
+        {
+            StringBuilder sb = new StringBuilder();
+            int n = numLog[0];
+            for (int i = 0; i < numLog.Length; i++)
+            {
+                int next = numLog[i];
+
+                if (n + 1 == next) sb.Append("w");
+                else if (n - 1 == next) sb.Append("s");
+                else if (n + 10 == next) sb.Append("d");
+                else if (n - 10 == next) sb.Append("a");
+
+                n = next;
+            }
+
+            return sb.ToString();
         }
     }
 }
