@@ -8,7 +8,7 @@ namespace Solution
 {
     internal class Solution
     {
-        public int[] solution(int[] num_list)
+        public int[] solution1(int[] num_list)
         {
 
             int length = num_list.Length;
@@ -24,6 +24,15 @@ namespace Solution
                 num_list[length - 1] * 2;
 
             return answer;
+        }
+
+        public int[] solution2(int[] num_list)
+        {
+            int l = num_list.Length - 1;
+            int a = num_list[l] > num_list[l - 1] ? num_list[l] - num_list[l - 1] : num_list[l] * 2;
+            Array.Resize(ref num_list, l + 2);
+            num_list[l + 1] = a;
+            return num_list;
         }
     }
 }
