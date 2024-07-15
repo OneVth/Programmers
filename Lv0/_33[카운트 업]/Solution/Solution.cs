@@ -8,7 +8,7 @@ namespace Solution
 {
     internal class Solution
     {
-        public int[] solution(int start_num, int end_num)
+        public int[] solution1(int start_num, int end_num)
         {
             int[] answer = new int[] { };
             List<int> list = new List<int>();
@@ -21,6 +21,11 @@ namespace Solution
             answer = list.ToArray();
 
             return answer;
+        }
+
+        public int[] solution2(int start_num, int end_num)
+        {
+            return Enumerable.Range(start_num, end_num - start_num + 1).ToArray();
         }
     }
 }
