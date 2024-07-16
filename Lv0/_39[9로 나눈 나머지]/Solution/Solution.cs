@@ -8,7 +8,7 @@ namespace Solution
 {
     internal class Solution
     {
-        public int solution(string number)
+        public int solution1(string number)
         {
             int answer = 0;
             List<int> container = new List<int>();
@@ -18,6 +18,11 @@ namespace Solution
             }
             answer = container.Sum() % 9;
             return answer;
+        }
+
+        public int solution2(string number)
+        {
+            return number.Select(s => s - '0').Sum() % 9;
         }
     }
 }
