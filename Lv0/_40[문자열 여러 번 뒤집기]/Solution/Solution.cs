@@ -8,7 +8,7 @@ namespace Solution
 {
     internal class Solution
     {
-        public string solution(string my_string, int[,] queries)
+        public string solution1(string my_string, int[,] queries)
         {
             StringBuilder sb = new StringBuilder(my_string);
             int queryCount = queries.GetLength(0);
@@ -26,6 +26,19 @@ namespace Solution
                 }
             }
             return sb.ToString();
+        }
+
+        public string solution2(string my_string, int[,] queries)
+        {
+            var arr = my_string.ToCharArray();
+            for(int y = 0; y < queries.GetLength(0); ++y)
+            {
+                int s = queries[y, 0];
+                int e = queries[y, 1];
+
+                Array.Reverse(arr, s, e - s + 1);
+            }
+            return new string(arr);
         }
     }
 }
