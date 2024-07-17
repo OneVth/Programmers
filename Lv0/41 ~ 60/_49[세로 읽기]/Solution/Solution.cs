@@ -8,7 +8,7 @@ namespace Solution
 {
     internal class Solution
     {
-        public string solution(string my_string, int m, int c)
+        public string solution1(string my_string, int m, int c)
         {
             List<char> list = new List<char>();
 
@@ -18,6 +18,16 @@ namespace Solution
             }
 
             return new string(list.ToArray());
+        }
+
+        public string solution2(string my_string, int m, int c)
+        {
+            StringBuilder sb = new StringBuilder();
+
+            for (int i = 0; i < my_string.Length / m; i++)
+                sb.Append(my_string[i * m + c - 1]);
+
+            return sb.ToString();
         }
     }
 }
