@@ -8,7 +8,7 @@ namespace Solution
 {
     internal class Solution
     {
-        public int solution(string my_string, string is_prefix)
+        public int solution1(string my_string, string is_prefix)
         {
             List<string> prefix = new List<string>();
 
@@ -18,6 +18,11 @@ namespace Solution
             }
 
             return prefix.Contains(is_prefix) ? 1 : 0;
+        }
+
+        public int solution2(string my_string, string is_prefix)
+        {
+            return my_string.IndexOf(is_prefix) == 0 ? 1 : 0;
         }
     }
 }
