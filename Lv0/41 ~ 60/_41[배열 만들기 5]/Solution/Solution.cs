@@ -8,7 +8,7 @@ namespace Solution
 {
     internal class Solution
     {
-        public int[] solution(string[] intStrs, int k, int s, int l)
+        public int[] solution1(string[] intStrs, int k, int s, int l)
         {
             int[] answer;
             List<int> list = new List<int>();
@@ -22,6 +22,12 @@ namespace Solution
 
             answer = list.ToArray();
             return answer;
+        }
+
+        public int[] solution2(string[] intStrs, int k, int s, int l)
+        {
+            return intStrs.Select(e => int.Parse(e.Substring(s, l)))
+                .Where(w => w > k).ToArray();
         }
     }
 }
