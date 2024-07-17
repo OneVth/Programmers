@@ -8,7 +8,7 @@ namespace Solution
 {
     internal class Solution
     {
-        public string solution(int q, int r, string code)
+        public string solution1(int q, int r, string code)
         {
             StringBuilder sb = new StringBuilder();
 
@@ -17,6 +17,11 @@ namespace Solution
                 if (i % q == r) sb.Append(code[i]);
             }
             return sb.ToString();
+        }
+
+        public string solution2(int q, int r, string code)
+        {
+            return new string(code.Where((w, index) => index % q == r).ToArray());
         }
     }
 }
