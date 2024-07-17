@@ -8,7 +8,7 @@ namespace Solution
 {
     internal class Solution
     {
-        public string[] solution(string my_string)
+        public string[] solution1(string my_string)
         {
             string[] answer = new string[] { };
             List<string> strList = new List<string>();
@@ -19,6 +19,20 @@ namespace Solution
             }
 
             answer = strList.OrderBy(o => o).ToArray();
+            return answer;
+        }
+        public string[] solution2(string my_string)
+        {
+            int l = my_string.Length;
+            string[] answer = new string[l];
+
+            for (int i = 0; i < l; i++)
+            {
+                string temp = my_string.Substring(i, l - i);
+                answer[i] = temp;
+            }
+
+            Array.Sort(answer);
             return answer;
         }
     }
