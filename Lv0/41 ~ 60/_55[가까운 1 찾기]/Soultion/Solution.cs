@@ -8,7 +8,7 @@ namespace Soultion
 {
     internal class Solution
     {
-        public int solution(int[] arr, int idx)
+        public int solution1(int[] arr, int idx)
         {
 
             for (int i = idx; i < arr.Length; i++)
@@ -17,6 +17,11 @@ namespace Soultion
             }
 
             return -1;
+        }
+
+        public int solution2(int[] arr, int idx)
+        {
+            return Array.FindIndex(arr, idx, arr.Length - idx, index => index == 1);
         }
     }
 }
