@@ -8,7 +8,7 @@ namespace Soultion
 {
     internal class Solution
     {
-        public string solution(string my_string, int[] indices)
+        public string solution1(string my_string, int[] indices)
         {
             StringBuilder sb = new StringBuilder(my_string);
 
@@ -21,6 +21,11 @@ namespace Soultion
             }
 
             return sb.ToString();
+        }
+
+        public string solution2(string my_string, int[] indices)
+        {
+            return new string(my_string.Where((w, index) => !indices.Contains(index)).ToArray());
         }
     }
 }
