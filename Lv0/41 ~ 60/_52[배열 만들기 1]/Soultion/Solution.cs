@@ -8,7 +8,7 @@ namespace Soultion
 {
     internal class Solution
     {
-        public int[] solution(int n, int k)
+        public int[] solution1(int n, int k)
         {
             List<int> list = new List<int>();
 
@@ -18,6 +18,10 @@ namespace Soultion
             }
 
             return list.ToArray();
+        }
+        public int[] solution2(int n, int k)
+        {
+            return Enumerable.Range(1, n).Where(w => w % k == 0).ToArray();
         }
     }
 }
