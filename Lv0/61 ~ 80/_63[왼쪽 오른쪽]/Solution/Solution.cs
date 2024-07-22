@@ -8,7 +8,7 @@ namespace Solution
 {
     internal class Solution
     {
-        public string[] solution(string[] str_list)
+        public string[] solution1(string[] str_list)
         {
             List<string> answer = new List<string>();
             int lIndex = Array.IndexOf(str_list, "l");
@@ -45,6 +45,40 @@ namespace Solution
 
 
             return answer.ToArray();
+        }
+
+        public string[] solution2(string[] str_list)
+        {
+            int l = Array.IndexOf(str_list, "l");
+            int r = Array.IndexOf(str_list, "r");
+
+            return (l == -1 && r == -1) ? new string[] { } : 
+                ((l == -1 ? r + 1 : l) < (r == -1 ? l + 1 : r) ? str_list.Take(l).ToArray() : 
+                str_list.Skip(r + 1).ToArray());
+        }
+
+        public string[] solution3(string[] str_list)
+        {
+            var list = new List<string>();
+
+            bool isFirst = false;
+            foreach (var c in str_list)
+            {
+                if (!isFirst)
+                {
+                    if (c == "l") return list.ToArray();
+                    else if (c == "r")
+                    {
+                        list.Clear();
+                        isFirst = true;
+                        continue;
+                    }
+                }
+
+                list.Add(c);
+            }
+
+            return isFirst ? list.ToArray() : new string[] { };
         }
     }
 }
