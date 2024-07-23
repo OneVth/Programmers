@@ -8,7 +8,7 @@ namespace Solution
 {
     internal class Solution
     {
-        public int solution(int[] numbers, int n)
+        public int solution1(int[] numbers, int n)
         {
             int answer = 0;
             int i = 0;
@@ -19,6 +19,17 @@ namespace Solution
                 i++;
             }
 
+            return answer;
+        }
+
+        public int solution2(int[] numbers, int n)
+        {
+            int answer = 0;
+            foreach (int item in numbers)
+            {
+                answer += item;
+                if (answer > n) break;
+            }
             return answer;
         }
     }
