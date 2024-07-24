@@ -8,12 +8,16 @@ namespace Solution
 {
     internal class Solution
     {
-        public int solution(string myString, string pat)
+        public int solution1(string myString, string pat)
         {
-
             if (pat.Length > myString.Length) return 0;
 
             return myString.ToUpper().Contains(pat.ToUpper()) ? 1 : 0;
+        }
+
+        public int solution2(string myString, string pat)
+        {
+            return myString.ToUpper().IndexOf(pat.ToUpper()) == -1 ? 0 : 1;
         }
     }
 }
