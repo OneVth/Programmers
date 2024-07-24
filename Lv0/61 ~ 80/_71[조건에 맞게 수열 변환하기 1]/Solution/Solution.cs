@@ -8,7 +8,7 @@ namespace Solution
 {
     internal class Solution
     {
-        public int[] solution(int[] arr)
+        public int[] solution1(int[] arr)
         {
             List<int> list = new List<int>();
 
@@ -20,6 +20,16 @@ namespace Solution
             }
 
             return list.ToArray();
+        }
+
+        public int[] solution2(int[] arr)
+        {
+            return arr.Select(s =>
+            {
+                if (s >= 50 && s % 2 == 0) return s / 2;
+                else if (s < 50 && s % 2 == 1) return s * 2;
+                else return s;
+            }).ToArray();
         }
     }
 }
