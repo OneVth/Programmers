@@ -8,7 +8,7 @@ namespace Solution
 {
     internal class Solution
     {
-        public int solution(int[] arr)
+        public int solution1(int[] arr)
         {
             int answer = 0;
             bool isEqual = false;
@@ -47,6 +47,55 @@ namespace Solution
             }
 
             return answer;
+        }
+
+        public int solution2(int[] arr)
+        {
+            int answer = 0;
+            int num = 0;
+
+            while (true)
+            {
+                for (int i = 0; i < arr.Length; i++)
+                {
+                    if (arr[i] >= 50 && arr[i] % 2 == 0) arr[i] /= 2;
+                    else if (arr[i] < 50 && arr[i] % 2 != 0) arr[i] = 2 * arr[i] + 1;
+                    else num++;
+                }
+                if (num == arr.Length) break;
+                else
+                {
+                    num = 0;
+                    answer++;
+                }
+            }
+            return answer;
+        }
+
+        public int solution3(int[] arr)
+        {
+            int x = 0;
+
+            while (true)
+            {
+                int[] other = new int[arr.Length];
+                for (int i = 0; i < arr.Length; i++)
+                {
+                    int n = arr[i];
+                    if (n >= 50 && n % 2 == 0) n = n / 2;
+                    else if (n < 50 && n % 2 == 1) n = n * 2 + 1;
+
+                    other[i] = n;
+                }
+
+                if (Enumerable.SequenceEqual(arr, other)) break;
+
+                var temp = other;
+                other = arr;
+                arr = other;
+                x++;
+            }
+            return x;
         }
     }
 }
