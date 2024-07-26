@@ -8,12 +8,17 @@ namespace Solution
 {
     internal class Solution
     {
-        public string solution(string myString)
+        public string solution1(string myString)
         {
             string answer = "";
             answer = myString.ToLower();
             answer = answer.Replace('a', 'A');
             return answer;
+        }
+
+        public string solution2(string myString)
+        {
+            return myString.ToLower().Replace('a', 'A');
         }
     }
 }
