@@ -8,7 +8,7 @@ namespace Solution
 {
     internal class Solution
     {
-        public int solution(string myString, string pat)
+        public int solution1(string myString, string pat)
         {
             int result = 0;
             int count = 0;
@@ -22,6 +22,23 @@ namespace Solution
             }
 
             return count;
+        }
+
+        public int solution2(string myString, string pat)
+        {
+            int answer = 0;
+            int lastIndex = 0;
+
+            while (true)
+            {
+                lastIndex = myString.IndexOf(pat, lastIndex);
+                if (lastIndex == -1) break;
+
+                ++lastIndex;
+                ++answer;
+            }
+
+            return answer;
         }
     }
 }
