@@ -8,12 +8,19 @@ namespace Solution
 {
     internal class Soution
     {
-        public string[] solution(string myString)
+        public string[] solution1(string myString)
         {
             string[] answer = myString.Split("x");
             answer = answer.Where(w => !string.IsNullOrWhiteSpace(w)).ToArray();
             Array.Sort(answer);
             return answer;
+        }
+
+        public string[] solution2(string myString)
+        {
+            return myString.Split('x', StringSplitOptions.RemoveEmptyEntries)
+                .OrderBy(o => o)
+                .ToArray();
         }
     }
 }
