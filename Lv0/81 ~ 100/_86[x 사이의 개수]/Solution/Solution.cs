@@ -8,7 +8,7 @@ namespace Solution
 {
     internal class Solution
     {
-        public int[] solution(string myString)
+        public int[] solution1(string myString)
         {
             List<int> list = new List<int>();
 
@@ -20,6 +20,12 @@ namespace Solution
             }
 
             return list.ToArray();
+        }
+
+        public int[] solution2(string myString)
+        {
+            string[] splited = myString.Split('x');
+            return splited.Select(w => w.Length).ToArray();
         }
     }
 }
