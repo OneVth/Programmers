@@ -8,7 +8,7 @@ namespace Solution
 {
     internal class Solution
     {
-        public int solution(string binomial)
+        public int solution1(string binomial)
         {
             int answer = 0;
             string[] splited = binomial.Split(" ");
@@ -26,6 +26,21 @@ namespace Solution
                     break;
             }
             return answer;
+        }
+
+        public int solution2(string binomial)
+        {
+            string[] splited = binomial.Split();
+
+            int a = int.Parse(splited[0]);
+            string op = splited[1];
+            int b = int.Parse(splited[2]);
+
+            if (op == "+") return a + b;
+            if (op == "-") return a - b;
+            if (op == "*") return a * b;
+
+            return 0;
         }
     }
 }
