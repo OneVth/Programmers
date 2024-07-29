@@ -8,7 +8,7 @@ namespace Solution
 {
     internal class Solution
     {
-        public int[] solution(int[] arr, int k)
+        public int[] solution1(int[] arr, int k)
         {
             List<int> list = new List<int>();
 
@@ -35,6 +35,15 @@ namespace Solution
             }
 
             return list.ToArray();
+        }
+
+        public int[] solution2(int[] arr, int k)
+        {
+            int[] distinct = arr.Distinct().Take(k).ToArray();
+            int[] answer = Enumerable.Repeat(-1, k).ToArray();
+            Array.Copy(distinct, 0, answer, 0, distinct.Length);
+
+            return answer;
         }
     }
 }
