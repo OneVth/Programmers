@@ -8,7 +8,7 @@ namespace Solution
 {
     internal class Solution
     {
-        public int[] solution(int[] arr, int n)
+        public int[] solution1(int[] arr, int n)
         {
 
             if (arr.Length % 2 == 0)
@@ -21,6 +21,18 @@ namespace Solution
                 for (int i = 0; i < arr.Length; i += 2)
                     arr[i] += n;
             }
+
+            return arr;
+        }
+
+        public int[] solution2(int[] arr, int n)
+        {
+            int i = 0;
+
+            i = arr.Length % 2 == 0 ? 1 : 0;
+
+            for (; i < arr.Length; i += 2)
+                arr[i] += n;
 
             return arr;
         }
