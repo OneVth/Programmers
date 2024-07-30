@@ -8,7 +8,7 @@ namespace Solution
 {
     internal class Solution
     {
-        public int solution(string[] strArr)
+        public int solution1(string[] strArr)
         {
             int answer = 0;
             Dictionary<int, List<string>> lengthGroups = new Dictionary<int, List<string>>();
@@ -30,6 +30,13 @@ namespace Solution
             }
 
             return answer;
+        }
+
+        public int solution2(string[] strArr)
+        {
+            return strArr.GroupBy(g => g.Length)
+                .OrderByDescending(o => o.Count())
+                .First().Count();
         }
     }
 }
