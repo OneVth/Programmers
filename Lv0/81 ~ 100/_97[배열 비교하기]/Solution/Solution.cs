@@ -8,7 +8,7 @@ namespace Solution
 {
     internal class Solution
     {
-        public int solution(int[] arr1, int[] arr2)
+        public int solution1(int[] arr1, int[] arr2)
         {
 
             if (arr1.Length != arr2.Length)
@@ -20,6 +20,27 @@ namespace Solution
             }
 
             return 0;
+        }
+
+        public int solution2(int[] arr1, int[] arr2)
+        {
+
+            int a = 0;
+            int b = 0;
+
+            if (arr1.Length != arr2.Length)
+            {
+                a = arr1.Length;
+                b = arr2.Length;
+            }
+            else
+            {
+                a = arr1.Sum();
+                b = arr2.Sum();
+            }
+
+            if (a == b) return 0;
+            return a > b ? 1 : -1;
         }
     }
 }
