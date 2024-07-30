@@ -8,7 +8,7 @@ namespace Solution
 {
     internal class Solution
     {
-        public int[] solution(int[] arr)
+        public int[] solution1(int[] arr)
         {
             int n = 1;
 
@@ -20,6 +20,16 @@ namespace Solution
             Array.Copy(arr, 0, answer, 0, arr.Length);
 
             return answer;
+        }
+
+        public int[] solution2(int[] arr)
+        {
+            int a = 1;
+            while (a < arr.Length)
+                a *= 2;
+
+            Array.Resize(ref arr, a);
+            return arr;
         }
     }
 }
