@@ -1,6 +1,6 @@
 # [Level 0] 정수 부분
 
-[문제 링크](https://school.programmers.co.kr/learn/courses/30/lessons/181851)
+[문제 링크](https://school.programmers.co.kr/learn/courses/30/lessons/181850)
 
 #### 문제 설명
 
