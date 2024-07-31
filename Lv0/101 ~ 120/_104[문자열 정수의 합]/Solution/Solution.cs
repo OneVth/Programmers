@@ -8,7 +8,7 @@ namespace Solution
 {
     internal class Solution
     {
-        public int solution(string num_str)
+        public int solution1(string num_str)
         {
             int answer = 0;
 
@@ -18,6 +18,11 @@ namespace Solution
             }
 
             return answer;
+        }
+
+        public int solution2(string num_str)
+        {
+            return num_str.Select(s => s - '0').Sum();
         }
     }
 }
