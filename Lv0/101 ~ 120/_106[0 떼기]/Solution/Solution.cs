@@ -8,7 +8,7 @@ namespace Solution
 {
     internal class Solution
     {
-        public string solution(string n_str)
+        public string solution1(string n_str)
         {
             int index = 0;
 
@@ -22,6 +22,11 @@ namespace Solution
 
             n_str.CopyTo(index, answer, 0, n_str.Length - index);
             return new string(answer);
+        }
+
+        public string solution2(string n_str)
+        {
+            return int.Parse(n_str).ToString();
         }
     }
 }
