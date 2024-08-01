@@ -8,7 +8,7 @@ namespace Solution
 {
     internal class Solution
     {
-        public string solution(string a, string b)
+        public string solution1(string a, string b)
         {
             int s = 0;
             int c = 0;
@@ -22,14 +22,8 @@ namespace Solution
             for (int i = a.Length - 1; i >= 0; i--)
             {
                 // s: carry + 두 인수, c: carry
-                s = ((a[i] - '0') + (b[i] - '0')) % 10 + c;
-                c = ((a[i] - '0') + (b[i] - '0')) / 10;
-
-                if (s == 10)
-                {
-                    s = 0;
-                    c = 1;
-                }
+                s = ((a[i] - '0') + (b[i] - '0') + c) % 10;
+                c = ((a[i] - '0') + (b[i] - '0') + c) / 10;
 
                 list.Add(s);
             }
@@ -43,6 +37,34 @@ namespace Solution
                 sb.Append(i);
             }
             return sb.ToString();
+        }
+
+        public string solution2(string a, string b)
+        {
+            string result = "";
+            int carry = 0;
+            int i = a.Length - 1;
+            int j = b.Length - 1;
+
+            while(i >= 0 || j >= 0 || carry > 0)
+            {
+                int sum = carry;
+                if(i >= 0)
+                {
+                    sum += a[i] - '0';
+                    i--;
+                }
+                if(j >= 0)
+                {
+                    sum += b[j] - '0';
+                    j--;
+                }
+
+                carry = sum / 10;
+                int digit = sum % 10;
+                result = digit.ToString() + result;
+            }
+            return result;
         }
     }
 }
