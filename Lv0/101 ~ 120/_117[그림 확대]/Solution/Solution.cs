@@ -8,7 +8,7 @@ namespace Solution
 {
     internal class Solution
     {
-        public string[] solution(string[] picture, int k)
+        public string[] solution1(string[] picture, int k)
         {
             StringBuilder sb = new StringBuilder();
             List<string> list = new List<string>();
@@ -30,6 +30,21 @@ namespace Solution
             }
 
             return list.ToArray();
+        }
+
+        public string[] solution2(string[] picture, int k)
+        {
+            var result = new List<string>();
+
+            foreach (var line in picture)
+            {
+                var expandedLine = string.Concat(line.Select(c => new string(c, k)));
+                for (int i = 0; i < k; i++)
+                {
+                    result.Add(expandedLine);
+                }
+            }
+            return result.ToArray();
         }
     }
 }
