@@ -8,7 +8,7 @@ namespace Solution
 {
     internal class Solution
     {
-        public int solution(string[] order)
+        public int solution1(string[] order)
         {
             int answer = 0;
 
@@ -21,6 +21,21 @@ namespace Solution
             }
 
             return answer;
+        }
+
+        public int solution2(string[] order)
+        {
+            return Enumerable.Range(0, order.Length)
+                .Select(s => order[s].Contains("cafelatte") ? 5000 : 4500)
+                .Sum();
+        }
+
+        public int solution3(string[] order)
+        {
+            int cafelatte = order.Count(c => c.Contains("cafelatte"));
+            int americano = order.Length - cafelatte;
+
+            return cafelatte * 5000 + americano * 4500;
         }
     }
 }
