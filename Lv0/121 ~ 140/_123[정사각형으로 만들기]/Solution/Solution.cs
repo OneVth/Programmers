@@ -12,6 +12,7 @@ namespace Solution
         {
             int rowSize = arr.GetLength(0);
             int colSize = arr.GetLength(1);
+            // int size = Math.Max(rowSize, colSize);
             int size = (rowSize > colSize) ? rowSize : colSize;
 
             int[,] answer = new int[size, size];
