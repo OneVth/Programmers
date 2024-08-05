@@ -8,7 +8,7 @@ namespace Solution
 {
     internal class Solution
     {
-        public int solution(string A, string B)
+        public int solution1(string A, string B)
         {
             string combined = B + B;
             if (combined.Contains(A))
@@ -19,6 +19,11 @@ namespace Solution
             }
 
             return -1;
+        }
+
+        public int solution2(string A, string B)
+        {
+            return (B + B).IndexOf(A);
         }
     }
 }
