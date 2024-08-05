@@ -12,5 +12,9 @@ namespace Solution
         {
             return (M - 1) + M * (N - 1);
         }
+        public int solution2(int M, int N)
+        {
+            return M * N - 1;
+        }
     }
 }
