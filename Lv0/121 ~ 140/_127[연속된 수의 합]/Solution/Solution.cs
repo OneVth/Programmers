@@ -8,7 +8,7 @@ namespace Solution
 {
     internal class Solution
     {
-        public int[] solution(int num, int total)
+        public int[] solution1(int num, int total)
         {
             List<int> answer = new List<int>();
             int std = total / num; // 기준 잡기
@@ -26,6 +26,13 @@ namespace Solution
 
             answer.Sort();
             return answer.ToArray();
+        }
+        public int[] solution2(int num, int total)
+        {
+            int midpoint = total / num;
+            int start = midpoint - (num - 1) / 2;
+
+            return Enumerable.Range(start, num).ToArray();
         }
     }
 }
