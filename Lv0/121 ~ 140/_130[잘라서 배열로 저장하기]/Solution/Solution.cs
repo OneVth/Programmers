@@ -10,7 +10,6 @@ namespace Solution
     {
         public string[] solution(string my_str, int n)
         {
-            string[] answer = new string[] { };
             List<string> list = new List<string>();
 
             int iterateNum = (my_str.Length + (n - 1)) / n;
