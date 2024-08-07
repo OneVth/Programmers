@@ -8,7 +8,7 @@ namespace Solution
 {
     internal class Solution
     {
-        public int solution(int n)
+        public int solution1(int n)
         {
             int answer = 0;
 
@@ -19,6 +19,11 @@ namespace Solution
             }
 
             return answer;
+        }
+
+        public int solution2(int n)
+        {
+            return n.ToString().Sum(x => int.Parse(x.ToString()));
         }
     }
 }
