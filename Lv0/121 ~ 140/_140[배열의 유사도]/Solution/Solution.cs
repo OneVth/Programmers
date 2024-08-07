@@ -8,7 +8,7 @@ namespace Solution
 {
     internal class Solution
     {
-        public int solution(string[] s1, string[] s2)
+        public int solution1(string[] s1, string[] s2)
         {
             int answer = 0;
             for (int i = 0; i < s1.Length; i++)
@@ -19,6 +19,11 @@ namespace Solution
                 }
             }
             return answer;
+        }
+
+        public int solution2(string[] s1, string[] s2)
+        {
+            return s1.Count(x => s2.Contains(x));
         }
     }
 }
