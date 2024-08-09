@@ -8,7 +8,7 @@ namespace Solution
 {
     internal class Solution
     {
-        public string solution(string cipher, int code)
+        public string solution1(string cipher, int code)
         {
             StringBuilder sb = new StringBuilder();
 
@@ -18,6 +18,11 @@ namespace Solution
             }
 
             return sb.ToString();
+        }
+
+        public string solution2(string cipher, int code)
+        {
+            return String.Concat(cipher.Where((x, i) => (i + 1) % code == 0));
         }
     }
 }
