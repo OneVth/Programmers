@@ -8,7 +8,7 @@ namespace Solution
 {
     internal class Solution
     {
-        public int solution(int order)
+        public int solution1(int order)
         {
             int answer = 0;
 
@@ -20,6 +20,11 @@ namespace Solution
             }
 
             return answer;
+        }
+
+        public int solution2(int order)
+        {
+            return order.ToString().Count(x => x == '3' || x == '6' || x == '9');
         }
     }
 }
