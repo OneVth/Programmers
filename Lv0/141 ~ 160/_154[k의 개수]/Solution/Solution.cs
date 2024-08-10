@@ -8,7 +8,7 @@ namespace Solution
 {
     internal class Solution
     {
-        public int solution(int i, int j, int k)
+        public int solution1(int i, int j, int k)
         {
             int answer = 0;
 
@@ -18,6 +18,18 @@ namespace Solution
             }
 
             return answer;
+        }
+
+        public int solution2(int i, int j, int k)
+        {
+            return Enumerable.Range(i, j - i + 1)
+                .Select(x => x.ToString().Where(y => y.Equals(k.ToString().First())).Count())
+                .Sum();
+        }
+
+        public int solution3(int i, int j, int k)
+        {
+            return Enumerable.Range(i, j - i + 1).Sum(x => x.ToString().Count(o => o.ToString() == k.ToString()));
         }
     }
 }
