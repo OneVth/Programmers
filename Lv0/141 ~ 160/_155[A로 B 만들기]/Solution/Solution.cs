@@ -8,7 +8,7 @@ namespace Solution
 {
     internal class Solution
     {
-        public int solution(string before, string after)
+        public int solution1(string before, string after)
         {
             char[] distinctedA = after.Distinct().OrderBy(o => o).ToArray();
             char[] distinctedB = before.Distinct().OrderBy(o => o).ToArray();
@@ -25,6 +25,25 @@ namespace Solution
             }
 
             return 1;
+        }
+
+        public int solution2(string before, string after)
+        {
+            char[] beforeArr = before.ToCharArray();
+            char[] afterArr = after.ToCharArray();
+            Array.Sort(beforeArr);
+            Array.Sort(afterArr);
+            for (int i = 0; i < beforeArr.Length; i++)
+            {
+                if (beforeArr[i] != afterArr[i])
+                    return 0;
+            }
+            return 1;
+        }
+
+        public int solution3(string before, string after)
+        {
+            return String.Concat(before.OrderBy(x => x)) == String.Concat(after.OrderBy(x => x)) ? 1 : 0;
         }
     }
 }
