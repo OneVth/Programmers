@@ -8,7 +8,7 @@ namespace Solution
 {
     internal class Solution
     {
-        public string solution(string my_string)
+        public string solution1(string my_string)
         {
             StringBuilder sb = new StringBuilder();
 
@@ -19,6 +19,11 @@ namespace Solution
             }
 
             return sb.ToString();
+        }
+
+        public string solution2(string my_string)
+        {
+            return string.Concat(my_string.Distinct());
         }
     }
 }
