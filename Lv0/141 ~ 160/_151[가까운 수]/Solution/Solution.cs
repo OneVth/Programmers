@@ -8,7 +8,7 @@ namespace Solution
 {
     internal class Solution
     {
-        public int solution(int[] array, int n)
+        public int solution1(int[] array, int n)
         {
             Array.Sort(array);
             int minDiff = Math.Abs(array[0] - n), minIdx = 0;
@@ -26,6 +26,16 @@ namespace Solution
             }
 
             return array[minIdx];
+        }
+
+        public int solution2(int[] array, int n)
+        {
+            return array.OrderBy(x => x).FirstOrDefault(x => Math.Abs(x - n) == array.Min(o => Math.Abs(o - n)));
+        }
+
+        public int solution3(int[] array, int n)
+        {
+            return array.OrderBy(x => x).OrderBy(x => Math.Abs(x - n)).ToArray().First();
         }
     }
 }
