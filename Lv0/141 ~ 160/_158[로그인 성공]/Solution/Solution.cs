@@ -8,7 +8,7 @@ namespace Solution
 {
     internal class Solution
     {
-        public string solution(string[] id_pw, string[,] db)
+        public string solution1(string[] id_pw, string[,] db)
         {
             string answer = "fail";
 
@@ -23,6 +23,23 @@ namespace Solution
 
             }
 
+            return answer;
+        }
+
+        public string solution2(string[] id_pw, string[,] db)
+        {
+            string answer = "fail";
+
+            for (int i = 0; i < db.GetLength(0); i++)
+            {
+                if (db[i, 0] == id_pw[0])
+                {
+                    if (db[i, 1] == id_pw[1])
+                        answer = "login";
+                    else
+                        answer = "wrong pw";
+                }
+            }
             return answer;
         }
     }
