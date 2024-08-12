@@ -8,7 +8,7 @@ namespace Solution
 {
     internal class Solution
     {
-        public int solution(int[,] dots)
+        public int solution1(int[,] dots)
         {
             int x1 = dots[0, 0], y1 = dots[0, 1];
             int x2 = dots[1, 0], y2 = dots[1, 1];
@@ -47,6 +47,21 @@ namespace Solution
             }
 
             return a;
+        }
+
+        public int solution2(int[,] dots)
+        {
+            bool parallel =
+                IsParallel(dots[0, 0] - dots[1, 0], dots[0, 1] - dots[1, 1], dots[2, 0] - dots[3, 0], dots[2, 1] - dots[3, 1]) ||
+                IsParallel(dots[0, 0] - dots[2, 0], dots[0, 1] - dots[2, 1], dots[1, 0] - dots[3, 0], dots[1, 1] - dots[3, 1]) ||
+                IsParallel(dots[0, 0] - dots[3, 0], dots[0, 1] - dots[3, 1], dots[1, 0] - dots[2, 0], dots[1, 1] - dots[2, 1]);
+
+            return parallel ? 1 : 0;
+        }
+
+        public bool IsParallel(int x1, int y1, int x2, int y2)
+        {
+            return y1 * x2 == y2 * x1;
         }
     }
 }
