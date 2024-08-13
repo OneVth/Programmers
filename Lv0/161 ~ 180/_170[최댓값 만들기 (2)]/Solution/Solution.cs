@@ -8,7 +8,7 @@ namespace Solution
 {
     internal class Solution
     {
-        public int solution(int[] numbers)
+        public int solution1(int[] numbers)
         {
 
             if (numbers.Length == 2)
@@ -26,6 +26,21 @@ namespace Solution
                 posMaxProduct = positive[0] * positive[1];
 
             return negMaxProduct > posMaxProduct ? negMaxProduct : posMaxProduct;
+        }
+
+        public int solution2(int[] numbers)
+        {
+            int[] ordered = numbers.OrderBy(o => o).ToArray();
+            int a = ordered[0] * ordered[1];
+            int b = ordered[ordered.Length - 1] * ordered[ordered.Length - 2];
+            return a > b ? a : b;
+        }
+
+        public int solution3(int[] numbers)
+        {
+            int length = numbers.Length;
+            Array.Sort(numbers);
+            return (int)Math.Max(numbers[0] * numbers[1], numbers[length - 1] * numbers[length - 2]);
         }
     }
 }
