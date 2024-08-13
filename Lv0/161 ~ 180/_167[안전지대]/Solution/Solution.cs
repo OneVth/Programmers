@@ -44,5 +44,39 @@ namespace Solution
 
             return answer;
         }
+
+        public int solution2(int[,] board)
+        {
+            int n = board.GetLength(0);
+            int answer = n * n;
+
+            // Direction vectors for 8 directions
+            int[] dx = { -1, -1, -1, 0, 1, 1, 1, 0 };
+            int[] dy = { -1, 0, 1, 1, 1, 0, -1, -1 };
+
+            for (int i = 0; i < n; ++i)
+            {
+                for (int j = 0; j < n; ++j)
+                {
+                    if (board[i, j] == 1)
+                    {
+                        // Mark the current bomb position as unsafe
+                        answer--;
+                        for (int d = 0; d < 8; d++)
+                        {
+                            int ni = i + dx[d];
+                            int nj = j + dy[d];
+                            if (0 <= ni && ni < n && 0 <= nj && nj < n && board[ni, nj] == 0)
+                            {
+                                board[ni, nj] = 2; // Mark unsafe area
+                                answer--;
+                            }
+
+                        }
+                    }
+                }
+            }
+            return answer;
+        }
     }
 }
