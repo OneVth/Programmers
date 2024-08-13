@@ -6,7 +6,7 @@
 
 다음 그림과 같이 지뢰가 있는 지역과 지뢰에 인접한 위, 아래, 좌, 우 대각선 칸을 모두 위험지역으로 분류합니다.
 
-제한사항![image](https://github.com/user-attachments/assets/71a035a4-cf5e-4904-8cd5-00e0bf5bf726)
+![image](https://github.com/user-attachments/assets/71a035a4-cf5e-4904-8cd5-00e0bf5bf726)
 
 지뢰는 2차원 배열 ```board```에 1로 표시되어 있고 ```board```에는 지뢰가 매설 된 지역 1과, 지뢰가 없는 지역 0만 존재합니다.
 
