@@ -8,7 +8,7 @@ namespace Solution
 {
     internal class Solution
     {
-        public int solution(string s)
+        public int solution1(string s)
         {
             int answer = 0;
             string[] tokens = s.Split(" ");
@@ -21,6 +21,18 @@ namespace Solution
                     answer += int.Parse(tokens[i]);
             }
             return answer;
+        }
+
+        public int solution2(string s)
+        {
+            var list = s.Split(' ').ToList();
+
+            while (list.Contains("Z"))
+            {
+                list.RemoveRange(list.IndexOf("Z") - 1, 2);
+            }
+
+            return list.Sum(x => Convert.ToInt32(x)); ;
         }
     }
 }
