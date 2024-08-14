@@ -8,7 +8,7 @@ namespace Solution
 {
     internal class Solution
     {
-        public int[] solution(string[] keyinput, int[] board)
+        public int[] solution1(string[] keyinput, int[] board)
         {
             int[] curPos = new int[2] { 0, 0 };
             int maxX = board[0] / 2;
@@ -43,6 +43,39 @@ namespace Solution
                 curPos[1] = nextPosY;
             }
             return curPos;
+        }
+
+        public int[] solution2(string[] keyinput, int[] board)
+        {
+            int maxX = board[0] / 2;
+            int maxY = board[1] / 2;
+
+            int x = 0, y = 0;
+
+            for (int i = 0; i < keyinput.Length; i++)
+            {
+                switch (keyinput[i])
+                {
+                    case "left":
+                        if (x > -maxX)
+                            x--;
+                        break;
+                    case "right":
+                        if (x < maxX)
+                            x++;
+                        break;
+                    case "up":
+                        if (y < maxY)
+                            y++;
+                        break;
+                    case "down":
+                        if (y > -maxY)
+                            y--;
+                        break;
+                }
+            }
+
+            return new int[] { maxX, maxY };
         }
     }
 }
