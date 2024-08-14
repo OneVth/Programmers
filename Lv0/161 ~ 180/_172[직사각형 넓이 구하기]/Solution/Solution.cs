@@ -8,7 +8,7 @@ namespace Solution
 {
     internal class Solution
     {
-        public int solution(int[,] dots)
+        public int solution1(int[,] dots)
         {
             int dx = 0, dy = 0;
 
@@ -21,6 +21,17 @@ namespace Solution
                     dy = dots[0, 1] - dots[i, 1];
             }
             return Math.Abs(dx * dy);
+        }
+
+        public int solution2(int[,] dots)
+        {
+            int[] xCoords = new int[] { dots[0, 0], dots[1, 0], dots[2, 0], dots[3, 0] }.Distinct().ToArray();
+            int[] yCoords = new int[] { dots[0, 1], dots[1, 1], dots[2, 1], dots[3, 1] }.Distinct().ToArray();
+
+            int length = (int)Math.Abs(yCoords.Max() - yCoords.Min());
+            int width = (int)Math.Abs(xCoords.Max() - xCoords.Min());
+
+            return length * width;
         }
     }
 }
