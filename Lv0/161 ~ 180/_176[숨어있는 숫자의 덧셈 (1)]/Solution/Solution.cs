@@ -8,7 +8,7 @@ namespace Solution
 {
     internal class Solution
     {
-        public int solution(string my_string)
+        public int solution1(string my_string)
         {
             int answer = 0;
 
@@ -19,6 +19,11 @@ namespace Solution
             }
 
             return answer;
+        }
+
+        public int solution2(string my_string)
+        {
+            return my_string.Where(x => char.IsNumber(x)).Sum(x => Convert.ToInt32(x.ToString()));
         }
     }
 }
