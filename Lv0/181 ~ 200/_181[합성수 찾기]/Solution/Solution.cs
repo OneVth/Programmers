@@ -8,7 +8,7 @@ namespace Solution
 {
     internal class Solution
     {
-        public int solution(int n)
+        public int solution1(int n)
         {
             int answer = 0;
 
@@ -22,13 +22,23 @@ namespace Solution
 
                     if (nDivisor >= 3)
                     {
-                        Console.WriteLine(i);
                         answer++;
                         break;
                     }
                 }
             }
 
+            return answer;
+        }
+
+        public int solution2(int n)
+        {
+            int answer = 0;
+
+            for (int i = 4; i <= n; i++)
+            {
+                answer += Enumerable.Range(1, n).Count(x => i % x == 0) >= 3 ? 1 : 0;
+            }
             return answer;
         }
     }
