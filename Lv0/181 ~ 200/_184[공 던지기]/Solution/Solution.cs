@@ -8,7 +8,7 @@ namespace Solution
 {
     internal class Solution
     {
-        public int solution(int[] numbers, int k)
+        public int solution1(int[] numbers, int k)
         {
             int answer = 1;
 
@@ -16,6 +16,16 @@ namespace Solution
                 answer = (answer + 2) > numbers.Length ? answer + 2 - numbers.Length : answer + 2;
 
             return answer;
+        }
+
+        public int solution2(int[] numbers, int k)
+        {
+            int position = 0;
+
+            for (int i = 0; i < k - 1; i++)
+                position = (position + 2) % numbers.Length;
+
+            return numbers[position];
         }
     }
 }
