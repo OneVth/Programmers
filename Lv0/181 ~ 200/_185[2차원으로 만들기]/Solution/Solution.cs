@@ -8,7 +8,7 @@ namespace Solution
 {
     internal class Solution
     {
-        public int[,] solution(int[] num_list, int n)
+        public int[,] solution1(int[] num_list, int n)
         {
             int nRow = num_list.Length / n;
             int nCol = n;
@@ -23,6 +23,20 @@ namespace Solution
             }
 
             return answer;
+        }
+
+        public int[][] solution2(int[] num_list, int n)
+        {
+            int rows = num_list.Length / n;
+            int[][] result = new int[rows][];
+
+            for (int i = 0; i < rows; i++)
+            {
+                result[i] = new int[n];
+                for (int j = 0; j < n; j++)
+                    result[i][j] = num_list[i * n + j];
+            }
+            return result;
         }
     }
 }
