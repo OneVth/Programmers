@@ -8,7 +8,7 @@ namespace Solution
 {
     internal class Solution
     {
-        public string solution(string rsp)
+        public string solution1(string rsp)
         {
             StringBuilder sb = new StringBuilder();
 
@@ -28,6 +28,20 @@ namespace Solution
                 }
             }
 
+            return sb.ToString();
+        }
+        public string solution2(string rsp)
+        {
+            StringBuilder sb = new StringBuilder();
+            char[] toWin = {
+            '5', '-', '0', '-', '-', '2'
+        };
+
+            int[] temp = rsp.Select(s => s - '0').ToArray();
+            for (int i = 0; i < rsp.Length; i++)
+            {
+                sb.Append(toWin[temp[i]]);
+            }
             return sb.ToString();
         }
     }
