@@ -8,7 +8,7 @@ namespace Solution
 {
     internal class Solution
     {
-        public int solution(int balls, int share)
+        public int solution1(int balls, int share)
         {
             double numerator = 1, denominator = 1;
 
@@ -20,5 +20,17 @@ namespace Solution
                 denominator *= balls - share - i;
             return (int)(numerator / denominator);
         }
+
+        public int solution2(int balls, int share)
+        {
+            long answer = 1;
+
+            for(int i = 0; i < balls - share; i++)
+            {
+                answer = answer * (balls - i) / (i + 1);
+            }
+            return (int)answer;
+        }
+
     }
 }
