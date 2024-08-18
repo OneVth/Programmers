@@ -8,7 +8,7 @@ namespace Solution
 {
     internal class Solution
     {
-        public int[] solution(int[] emergency)
+        public int[] solution1(int[] emergency)
         {
             List<int> list = new List<int>();
             var temp = emergency.OrderByDescending(o => o).ToArray();
@@ -17,6 +17,12 @@ namespace Solution
                 list.Add(Array.IndexOf(temp, emergency[i]) + 1);
 
             return list.ToArray();
+        }
+
+        public int[] solution2(int[] emergency)
+        {
+            int[] ordered = emergency.OrderByDescending(o => o).ToArray();
+            return emergency.Select(s => Array.IndexOf(ordered, s) + 1).ToArray();
         }
     }
 }
