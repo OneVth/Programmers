@@ -8,7 +8,7 @@ namespace Solution
 {
     internal class Solution
     {
-        public string solution(int age)
+        public string solution1(int age)
         {
             StringBuilder sb = new StringBuilder();
 
@@ -16,6 +16,17 @@ namespace Solution
                 sb.Append((char)(int.Parse(c.ToString()) + 'a'));
 
             return sb.ToString();
+        }
+
+        public string solution2(int age)
+        {
+            string answer = "";
+            while(age > 0)
+            {
+                answer = (char)(age % 10 + 'a') + answer;
+                age /= 10;
+            }
+            return answer;
         }
     }
 }
