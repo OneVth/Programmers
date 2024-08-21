@@ -8,9 +8,14 @@ namespace Solution
 {
     internal class Solution
     {
-        public double solution(int[] numbers)
+        public double solution1(int[] numbers)
         {
             return (double)numbers.Sum() / numbers.Length;
+        }
+
+        public double solution2(int[] numbers)
+        {
+            return numbers.Average();
         }
     }
 }
