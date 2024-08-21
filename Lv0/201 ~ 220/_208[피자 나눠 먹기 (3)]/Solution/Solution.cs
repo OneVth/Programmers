@@ -8,7 +8,7 @@ namespace Solution
 {
     internal class Solution
     {
-        public int solution(int slice, int n)
+        public int solution1(int slice, int n)
         {
             int answer = 0;
 
@@ -16,6 +16,11 @@ namespace Solution
                 answer++;
 
             return answer;
+        }
+
+        public int solution2(int slice, int n)
+        {
+            return (n + slice - 1) / slice;
         }
     }
 }
