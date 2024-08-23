@@ -8,7 +8,7 @@ namespace Solution
 {
     internal class Solution
     {
-        public int solution(int[] array)
+        public int solution1(int[] array)
         {
             var query = array.GroupBy(g => g)
                 .OrderByDescending(o => o.Count())
@@ -19,6 +19,13 @@ namespace Solution
                 return query[0].Key;
 
             return (query[0].Count() != query[1].Count()) ? query[0].Key : -1;
+        }
+
+        public int solution2(int[] array)
+        {
+            var list = array.GroupBy(x => x, g => g, (x, g) => new { n = x, cnt = g.Count() });
+            var max = list.Where(x => x.cnt == list.Max(o => o.cnt));
+            return max.Count() == 1 ? max.First().n : -1;
         }
     }
 }
