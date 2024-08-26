@@ -8,7 +8,7 @@ namespace Solution
 {
     internal class Solution
     {
-        public int solution(int n)
+        public int solution1(int n)
         {
             bool[] PrimeArray = Enumerable.Repeat<bool>(true, n + 1).ToArray();
 
@@ -19,6 +19,25 @@ namespace Solution
 
             // 0, 1은 제외하고 카운트
             return PrimeArray.Skip(2).Count(x => x);
+        }
+
+        public int solution2(int n)
+        {
+            int answer = 0;
+
+            for (int i = 2; i <= n; i++)
+                if (IsPrime(i))
+                    answer++;
+
+            return answer;
+        }
+
+        public bool IsPrime(int n)
+        {
+            for (int i = 2; i * i <= n; i++)
+                if (n % i == 0)
+                    return false;
+            return true;
         }
     }
 }
