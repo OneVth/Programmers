@@ -8,7 +8,7 @@ namespace Solution
 {
     internal class Solution
     {
-        public int solution(int n)
+        public int solution1(int n)
         {
             int answer = 0;
 
@@ -16,6 +16,19 @@ namespace Solution
                 answer += int.Parse(c.ToString());
 
             return answer;
+        }
+
+        public int solution2(int n)
+        {
+            int sum = 0;
+
+            while (n > 0)
+            {
+                sum += n % 10;
+                n /= 10;
+            }
+
+            return sum;
         }
     }
 }
