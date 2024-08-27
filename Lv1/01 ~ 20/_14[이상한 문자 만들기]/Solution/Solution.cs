@@ -8,7 +8,7 @@ namespace Solution
 {
     internal class Solution
     {
-        public string solution(string s)
+        public string solution1(string s)
         {
             StringBuilder sb = new StringBuilder();
             string[] srcArray = s.Split(" ");
@@ -28,6 +28,30 @@ namespace Solution
             }
 
             return String.Join(" ", dstArray);
+        }
+
+        public string solution2(string s)
+        {
+            StringBuilder result = new StringBuilder();
+            string[] words = s.Split(" ");
+
+            for (int i = 0; i < words.Length; i++)
+            {
+                StringBuilder sb = new StringBuilder();
+                for (int j = 0; j < words[i].Length; j++)
+                {
+                    if (j % 2 == 0)
+                        sb.Append(char.ToUpper(words[i][j]));
+                    else
+                        sb.Append(char.ToLower(words[i][j]));
+                }
+
+                result.Append(sb.ToString());
+                if (i < words.Length - 1)
+                    result.Append(" ");
+            }
+
+            return result.ToString();
         }
     }
 }
