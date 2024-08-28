@@ -8,25 +8,29 @@ namespace Solution
 {
     internal class Solution
     {
-        public long solution(long n)
+        public long solution1(long n)
         {
-            long answer = -1;
             double sqrt = Math.Sqrt(n);
 
 
             // for(int i = 1; i * i <= n; i++)
             // {
-            //     if(n % i == 0)
+            //     if(i * i == n)
             //     {
-            //         if(i * i == n)
-            //         {
-            //             answer = (i + 1) * (i + 1);
-            //             break;
-            //         }
+            //         answer = (i + 1) * (i + 1);
+            //         break;
             //     }
             // }
+            // 
 
             return sqrt % 1 == 0 ? (long)Math.Pow(sqrt + 1, 2) : -1;
+        }
+
+        public long solution2(long n)
+        {
+            double sqrt = Math.Sqrt(n);
+
+            return sqrt == (long)sqrt ? (long)Math.Pow(sqrt + 1, 2) : -1;
         }
     }
 }
