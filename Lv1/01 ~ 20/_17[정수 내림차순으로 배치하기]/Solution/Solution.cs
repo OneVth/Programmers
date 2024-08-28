@@ -8,7 +8,7 @@ namespace Solution
 {
     internal class Solution
     {
-        public long solution(long n)
+        public long solution1(long n)
         {
             StringBuilder sb = new StringBuilder();
             string tmp;
@@ -25,6 +25,16 @@ namespace Solution
             Array.Sort(tmpArray);
             Array.Reverse(tmpArray);
             return long.Parse(new string(tmpArray));
+        }
+
+        public long solution2(long n)
+        {
+            char[] digits = n.ToString().ToCharArray();
+
+            Array.Sort(digits);
+            Array.Reverse(digits);
+
+            return long.Parse(new string(digits));
         }
     }
 }
