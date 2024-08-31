@@ -8,7 +8,7 @@ namespace Solution
 {
     internal class Solution
     {
-        public int[,] solution(int[,] arr1, int[,] arr2)
+        public int[,] solution1(int[,] arr1, int[,] arr2)
         {
             int rowSize = arr1.GetLength(0);
             int colSize = arr1.GetLength(1);
@@ -17,6 +17,16 @@ namespace Solution
             for (int i = 0; i < rowSize; i++)
                 for (int j = 0; j < colSize; j++)
                     answer[i, j] = arr1[i, j] + arr2[i, j];
+
+            return answer;
+        }
+
+        public int[,] solution2(int[,] arr1, int[,] arr2)
+        {
+            int[,] answer = (int[,])arr1.Clone();
+            for (int i = 0; i < arr1.GetLength(0); i++)
+                for (int j = 0; j < arr2.GetLength(1); j++)
+                    answer[i, j] += arr2[i, j];
 
             return answer;
         }
