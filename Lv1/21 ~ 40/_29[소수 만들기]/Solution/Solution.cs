@@ -8,7 +8,7 @@ namespace Solution
 {
     internal class Solution
     {
-        public int solution(int[] nums)
+        public int solution1(int[] nums)
         {
             int answer = 0;
             bool[] primes = Enumerable.Repeat(true, 3000).ToArray(); ;
@@ -38,6 +38,35 @@ namespace Solution
             }
 
             return answer;
+        }
+
+        public int solution2(int[] nums)
+        {
+            int answer = 0;
+
+            for (int i = 0; i < nums.Length - 2; i++)
+            {
+                for (int j = i + 1; j < nums.Length - 1; j++)
+                {
+                    for (int k = j + 1; k < nums.Length; k++)
+                    {
+                        int sum = nums[i] + nums[j] + nums[k];
+                        if (CheckPrime(sum))
+                            answer++;
+                    }
+                }
+            }
+            return answer;
+        }
+
+        public bool CheckPrime(int n)
+        {
+            for(int i = 2; i < n; i++)
+            {
+                if (n % i == 0)
+                    return false;
+            }
+            return true;
         }
     }
 }
