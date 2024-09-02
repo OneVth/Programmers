@@ -82,15 +82,14 @@ namespace Solution
                     nScores[2]++;
             }
 
-            List<int> answerList = new List<int>();
-            if (nScores[0] == nScores.Max())
-                answerList.Add(1);
-            if (nScores[1] == nScores.Max())
-                answerList.Add(2);
-            if (nScores[2] == nScores.Max())
-                answerList.Add(3);
+            List<int> result = new List<int>();
+            for(int i = 0; i < nScores.Length; i++)
+            {
+                if (nScores[i] == nScores.Max())
+                    result.Add(i + 1);
+            }
 
-            return answerList.ToArray();
+            return result.ToArray();
         }
     }
 }
