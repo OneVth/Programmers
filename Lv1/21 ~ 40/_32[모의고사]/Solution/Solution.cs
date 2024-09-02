@@ -8,7 +8,7 @@ namespace Solution
 {
     internal class Solution
     {
-        public int[] solution(int[] answers)
+        public int[] solution1(int[] answers)
         {
             int[] answer = { };
             int[] student1 = { 1, 2, 3, 4, 5 };
@@ -61,6 +61,36 @@ namespace Solution
                 answer = new int[] { 3 };
 
             return answer;
+        }
+
+        public int[] solution2(int[] answers)
+        {
+            int[] nRules1 = { 1, 2, 3, 4, 5 };
+            int[] nRules2 = { 2, 1, 2, 3, 2, 4, 2, 5 };
+            int[] nRules3 = { 3, 3, 1, 1, 2, 2, 4, 4, 5, 5 };
+            int[] nScores = new int[3];
+            
+            for(int i = 0; i < answers.Length; i++)
+            {
+                if (answers[i] == nRules1[i % nRules1.Length])
+                    nScores[0]++;
+
+                if (answers[i] == nRules2[i % nRules2.Length])
+                    nScores[1]++;
+
+                if (answers[i] == nRules3[i % nRules3.Length])
+                    nScores[2]++;
+            }
+
+            List<int> answerList = new List<int>();
+            if (nScores[0] == nScores.Max())
+                answerList.Add(1);
+            if (nScores[1] == nScores.Max())
+                answerList.Add(2);
+            if (nScores[2] == nScores.Max())
+                answerList.Add(3);
+
+            return answerList.ToArray();
         }
     }
 }
