@@ -40,5 +40,20 @@ namespace Solution
 
             return answerList.ToArray();
         }
+
+        public int[] solution3(int[] numbers)
+        {
+            HashSet<int> sums = new HashSet<int>();
+
+            for(int i = 0; i < numbers.Length - 1; i++)
+            {
+                for(int j = i + 1; j < numbers.Length; j++)
+                {
+                    sums.Add(numbers[i] + numbers[j]);
+                }
+            }
+
+            return sums.OrderBy(o => o).ToArray();
+        }
     }
 }
