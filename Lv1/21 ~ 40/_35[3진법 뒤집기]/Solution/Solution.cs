@@ -8,7 +8,7 @@ namespace Solution
 {
     internal class Solution
     {
-        public int solution(int n)
+        public int solution1(int n)
         {
             int answer = 0;
             int length = 0;
@@ -24,6 +24,20 @@ namespace Solution
             {
                 answer += n / (int)Math.Pow(3, i) * (int)Math.Pow(3, j);
                 n = n % (int)Math.Pow(3, i);
+            }
+
+            return answer;
+        }
+
+        public int solution2(int n)
+        {
+            int answer = 0;
+
+            while (n > 0)
+            {
+                answer *= 3;
+                answer += n % 3;
+                n /= 3;
             }
 
             return answer;
