@@ -8,7 +8,7 @@ namespace Solution
 {
     internal class Solution
     {
-        public int solution(int[] a, int[] b)
+        public int solution1(int[] a, int[] b)
         {
             int answer = 0;
 
@@ -18,6 +18,11 @@ namespace Solution
             }
 
             return answer;
+        }
+
+        public int solution2(int[] a, int[] b)
+        {
+            return a.Zip(b, (t1, t2) => t1 * t2).Sum();
         }
     }
 }
