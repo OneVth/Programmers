@@ -8,7 +8,7 @@ namespace Solution
 {
     internal class Solution
     {
-        public int[] solution(int[] lottos, int[] win_nums)
+        public int[] solution1(int[] lottos, int[] win_nums)
         {
             int[] ranking = { 6, 6, 5, 4, 3, 2, 1 };
             int correctCount = 0;
@@ -26,6 +26,18 @@ namespace Solution
             int minCorrect = correctCount; // 최소 일치 개수
 
             return new int[] { ranking[maxCorrect], ranking[minCorrect] };
+        }
+
+        public int[] solution2(int[] lottos, int[] win_nums)
+        {
+            int[] ranking = { 6, 6, 5, 4, 3, 2, 1 };
+            int zeroCount = lottos.Count(x => x == 0);
+            int correctCount = lottos.Intersect(win_nums).Count();
+
+            int maxCorrect = correctCount + zeroCount;
+            int minCorrect = correctCount;
+
+            return new[] { ranking[maxCorrect], ranking[minCorrect] };
         }
     }
 }
