@@ -8,7 +8,7 @@ namespace Solution
 {
     internal class Solution
     {
-        public int solution(int[] absolutes, bool[] signs)
+        public int solution1(int[] absolutes, bool[] signs)
         {
             int answer = 0;
 
@@ -18,6 +18,11 @@ namespace Solution
             }
 
             return answer;
+        }
+
+        public int solution2(int[] absolutes, bool[] signs)
+        {
+            return absolutes.Select((t, idx) => signs[idx] ? t : -t).Sum();
         }
     }
 }
