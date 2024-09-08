@@ -8,7 +8,7 @@ namespace Solution
 {
     internal class Solution
     {
-        public int solution(int[,] sizes)
+        public int solution1(int[,] sizes)
         {
             int width = 0;
             int height = 0;
@@ -20,6 +20,23 @@ namespace Solution
 
                 width = longer > width ? longer : width;
                 height = shorter > height ? shorter : height;
+            }
+
+            return width * height;
+        }
+
+        public int solution2(int[,] sizes)
+        {
+            int width = 0;
+            int height = 0;
+
+            for (int i = 0; i < sizes.GetLength(0); i++)
+            {
+                int longer = Math.Max(sizes[i, 0], sizes[i, 1]);
+                int shorter = Math.Min(sizes[i, 0], sizes[i, 1]);
+
+                width = Math.Max(width, longer);
+                height = Math.Max(height, shorter);
             }
 
             return width * height;
