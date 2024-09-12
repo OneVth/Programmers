@@ -8,7 +8,7 @@ namespace Solution
 {
     internal class Solution
     {
-        public string solution(int[] food)
+        public string solution1(int[] food)
         {
             string[] chunk = new string[2];
             StringBuilder temp = new StringBuilder();
@@ -28,5 +28,25 @@ namespace Solution
 
             return string.Join("0", chunk);
         }
+
+        public string solution2(int[] food)
+        {
+            StringBuilder leftSide = new StringBuilder();
+
+            for(int i = 1; i < food.Length; i++)
+            {
+                for(int j = 0; j < food[i] / 2; j++)
+                {
+                    leftSide.Append(i);
+                }
+            }
+
+            char[] rightSideArray = leftSide.ToString().ToCharArray();
+            Array.Reverse (rightSideArray);
+            string rightSide = new string(rightSideArray);
+
+            return leftSide.ToString() + "0" + rightSide;
+        }
+
     }
 }
